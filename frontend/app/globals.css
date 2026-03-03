@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --deriv-red: #FF444F;
+  --deriv-dark: #0E0E0E;
+  --deriv-card: #1A1A1A;
+  --deriv-border: #2A2A2A;
+  --deriv-green: #00C853;
+}
+
+body {
+  background-color: var(--deriv-dark);
+  color: white;
+}
+
+.agent-card {
+  @apply bg-deriv-card border border-deriv-border rounded-xl p-4;
+}
+
+.status-idle { @apply text-gray-400; }
+.status-analyzing { @apply text-yellow-400; }
+.status-executing { @apply text-blue-400; }
+.status-approved { @apply text-green-400; }
+.status-rejected { @apply text-red-400; }
+.status-monitoring { @apply text-purple-400; }
+.status-done { @apply text-green-400; }
+.status-error { @apply text-red-500; }
+
+@keyframes pulse-green {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+.pulse-green { animation: pulse-green 2s infinite; }
